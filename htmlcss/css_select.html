@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Select</title>
+
+    <!-- 常用的选择器
+        标签名{}
+        #id{}
+        .class{}
+        分组选择器
+        通配选择器
+        交集选择器
+        后代元素选择器 祖先标签 后代标签 {}
+    -->
+    <style type="text/css">
+        p{
+            color: red;
+            font-size: 30px;
+        }
+
+        #kid{
+            color: blue;
+        }
+
+        .cid{
+            color: yellow;
+            font-size: 50px;
+        }
+
+
+        #p3,#p4,.hello{
+            color: aqua;
+            font-size: 40px;
+        }
+
+        /**
+        选择span标签class为hello的元素
+        */
+        span.hello{
+            color: blueviolet;
+            font-size: 50px;
+        }
+
+        /**
+        后代选择器
+         */
+        div p span{
+            color:green;
+            font-size: 50px;
+        }
+
+        /**
+        给没有访问的连接设置为绿色
+         */
+        a:link{
+            background-color: green;
+        }
+
+        /**
+        给访问的连接设置为红色
+         */
+        a:visited{
+            background-color: red;
+        }
+
+        /**
+        鼠标滑过样式
+         */
+        p:hover{
+            background-color: blueviolet;
+        }
+
+        /**
+        文本框获取焦点改变背景颜色
+         */
+        input:focus{
+            background-color: aqua;
+        }
+
+        /**
+        给选择的文字设置样式
+         */
+        p::selection{
+            background-color: orange;
+        }
+
+        /**
+        选择含有指定属性的元素
+         */
+        p[title]{
+            color: aquamarine;
+        }
+
+        /**
+        选择含有指定属性且属性值确定的元素
+         */
+        p[title="world2"]{
+            color: brown;
+        }
+
+        /**
+        选择含有指定属性且属性值以ab开头
+         */
+        p[title^="ab"]{
+            color: chocolate;
+        }
+
+        /**
+       选择含有指定属性且属性值以ab结尾
+        */
+        p[title$="ab"]{
+            color: chocolate;
+        }
+
+        /**
+      选择含有指定属性且属性值包含ab
+       */
+        p[title$="ab"]{
+            color: chocolate;
+        }
+
+        /**
+        选择span后的第一个p标签，选择一个元素后一个兄弟元素
+         */
+        span + p{
+            background-color: green;
+        }
+
+        /**
+        选择span后的所有p标签，选择一个元素后一个兄弟元素
+         */
+        span ~ p{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>悯农</h1>
+    <p>锄禾日当午</p>
+    <p>锄禾日当午</p>
+    <p>锄禾日当午</p>
+    <p>锄禾日当午</p>
+    <p id="kid">汗滴禾下土</p>
+    <p class="cid">锄禾日当午</p>
+    <p class="cid">锄禾日当午</p>
+    <p class="cid">锄禾日当午</p>
+
+    <p id="p3">锄禾日当午</p>
+    <p class="hello">锄禾日当午</p>
+    <p id="p4">锄禾日当午</p>
+    <p>锄禾日当午</p>
+    <p>锄禾日当午</p>
+
+    <span class="hello">交集选择器</span>
+
+    <div>
+        这时div中的元素
+        <span>这是div中的span</span>
+        <p><span>这是p中span</span></p>
+    </div>
+
+    <span>这是body中的span</span>
+    <p>锄禾日当午</p>
+
+    <br>
+    <a href="http://www.baidu.com">百度</a>
+    <br>
+    <a href="http://www.bilibili.com">B站</a>
+
+    <hr>
+    <span>Username:</span>
+    <input id="username" placeholder="username" />
+
+    <p title="world1">title world1</p>
+    <p title="world2">title world2</p>
+    <p title="world3">title world3</p>
+
+</body>
+</html>
