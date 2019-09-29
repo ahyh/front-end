@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+    <style type="text/css">
+        a{
+            /**
+            将一个内联元素设置为块元素
+             */
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        /**
+        块元素在文档流中垂直排列，如果希望元素在水平排列则可以使用脱离文档流的方法来达到水平排列
+        设置float后，元素立即脱离文档流，下边的元素会立即向上移动
+         */
+        .box1{
+            /**
+            display:inline-block是元素内联
+             */
+            /*display: inline-block;*/
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            float: left;
+        }
+
+        .box2{
+            /*display: inline-block;*/
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+
+        .box3{
+            /*display: inline-block;*/
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="http://www.baidu.com">这是一个超大的连接</a>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+</body>
+</html>
