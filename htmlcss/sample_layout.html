@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Layout</title>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .header{
+            width: 1000px;
+            height: 150px;
+            background-color: aqua;
+            /**
+            设置居中
+             */
+            margin: 0 auto;
+        }
+
+        .content{
+            width: 1000px;
+            height: 400px;
+            background-color: orange;
+            /**
+            设置居中
+             */
+            margin: 10px auto;
+        }
+
+        .tail{
+            width: 1000px;
+            height: 100px;
+            background-color: red;
+            /**
+            设置居中
+             */
+            margin: 0 auto;
+        }
+
+        .left{
+            width: 200px;
+            height: 100%;
+            background-color: aquamarine;
+            /**
+            向左浮动
+             */
+            float: left;
+
+        }
+
+        .middle{
+            width: 580px;
+            height: 100%;
+            background-color: blue;
+            /**
+            向左浮动
+             */
+            float: left;
+            /**
+            设置上下0，左右10px的边距
+            */
+            margin: 0 10px;
+        }
+
+        .right{
+            width: 200px;
+            height: 100%;
+            background-color: darkslategray;
+            /**
+            向左浮动
+             */
+            float: left;
+        }
+
+        .middle-top{
+            width: 580px;
+            height: 50%;
+            background-color: antiquewhite;
+        }
+
+        .middle-bottom{
+            width: 580px;
+            height: 50%;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header"></div>
+    <div class="content">
+        <div class="left"></div>
+        <div class="middle">
+            <div class="middle-top"></div>
+            <div class="middle-bottom"></div>
+        </div>
+        <div class="right"></div>
+    </div>
+    <div class="tail"></div>
+
+</body>
+</html>
