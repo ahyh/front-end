@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buttons</title>
+    <style type="text/css">
+        .btn:link {
+            /**将超链接转换为块元素*/
+            display: block;
+            width: 93px;
+            height: 29px;
+            margin: 50px auto;
+            background-image: url(../file/btn/link.png);
+            background-repeat: no-repeat;
+        }
+
+        .btn:hover {
+            background-image: url(../file/btn/hover.png);
+        }
+
+        .btn:active {
+            background-image: url(../file/btn/active.png);
+        }
+
+        /**
+        解决图片加载闪烁问题，一次加载所以的图片，不同动作将图片移动
+         */
+        .btn2:link {
+            /**将超链接转换为块元素*/
+            display: block;
+            width: 93px;
+            height: 29px;
+            margin: 150px auto;
+            background-image: url(../file/btn/btn.png);
+            background-repeat: no-repeat;
+        }
+
+        .btn2:hover {
+            background-image: url(../file/btn/btn.png);
+            /**
+            图片向左移动
+             */
+            background-position: -93px 0;
+        }
+
+        .btn2:active {
+            background-image: url(../file/btn/btn.png);
+            /**
+           图片向左移动
+            */
+            background-position: -186px 0;
+        }
+    </style>
+</head>
+<body>
+
+<a class="btn" href="http://www.baidu.com"></a>
+<a class="btn2" href="http://www.baidu.com"></a>
+
+</body>
+</html>

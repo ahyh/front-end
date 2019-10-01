@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layer</title>
+    <style type="text/css">
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /**相对定位*/
+            position: relative;
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /**绝对定位*/
+            position: absolute;
+            left: 100px;
+            top: 100px;;
+            /**
+            如果元素的层级是一样的，则下边的元素会盖住上一个元素，指定层级，层级越高越优先显示
+            对于没有开启定位的元素，z-index是没有作用的
+            父元素的层级再高也不会盖住子元素
+             */
+            z-index: 2;
+            /**
+            设置元素的透明背景
+            取值范围0-1，0表示完全透明，1-表示完全不透明
+             */
+            opacity: 0.5;
+        }
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+</body>
+</html>
