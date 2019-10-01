@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style type="text/css">
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: gainsboro;
+            /**
+            定位指的是将元素放在页面的指定位置，通过定位可以摆放任何元素
+            通过position属性来设置元素的定位：
+                static：默认值，元素没有开启定位
+                relative：开启元素的相对定位,相对于元素在文档流中原位置进行移动，相对定位在文档流的位置还保留，相对定位使元素提升一个层级，通常偏移量只设置两个
+                absolute：开启元素的绝对定位,
+                fixed：开启元素的固定定位
+            开启定位后通过left、right、top、bottom来设置偏移量
+             */
+            position: relative;
+            left: 200px;
+            top: 200px;
+        }
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            /**
+            position:absolute,开启绝对定位脱离文档流，如果不设置偏移量则位置不变,绝对定位是相当于开启了定位的最近的祖先元素
+                如果所有的祖先元素都没有开启绝对定位则相当于浏览器窗口进行定位
+                绝对定位会使元素提升一个层级
+                绝对定位会改变元素的性质，内联元素变成块元素，块元素的高度和宽度会被内容撑开
+             */
+            position: absolute;
+            left: 500px;
+            top: 500px;
+        }
+
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+
+</body>
+</html>
