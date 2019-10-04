@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: pink;
+        }
+
+        #canvas-test {
+            background-color: #019e8b;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+ canvas是HTML5新增的元素，可以通过javascript来绘制图形
+ canvas默认的width:300px,height:150px
+ -->
+<canvas id="canvas-test" width="600px" height="400px">
+    <!-- 如果浏览器支持canvas则span不展示 -->
+    <span>第一个canvas</span>
+</canvas>
+
+</body>
+
+<script>
+    window.onload = function () {
+        var canvasNode = document.querySelector("#canvas-test");
+        if (canvasNode.getContext) {
+            var ctx = canvasNode.getContext('2d');
+            ctx.save();
+            /***
+             * 使用canvas绘制矩形
+             */
+            //不加单位绘制矩形,绘制实体矩形，填充了颜色
+            ctx.fillStyle = 'deeppink'  //填充颜色
+            ctx.strokeStyle = 'deepblue'
+            ctx.fillRect(10, 10, 100, 100);
+            //绘制边框矩形
+            ctx.strokeRect(100.5, 100.5, 100, 100);
+            //清除指定区域的矩形，清除部分完全透明
+            ctx.clearRect(200, 200, 100, 100);
+
+            //绘制路径
+            ctx.moveTo(50, 50);
+            ctx.lineTo(80, 90);
+            ctx.lineTo(230, 110);
+            ctx.closePath();
+            ctx.stroke(); //画线
+//            ctx.fill(); //fill方法会自动的合并路径
+            ctx.restore();
+        }
+    }
+</script>
+</html>
