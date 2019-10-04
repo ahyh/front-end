@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas-Change</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #4c4c4c;
+        }
+
+        #canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: whitesmoke;
+            /*transform: translateX(100px);*/
+            /*transform: translateY(100px);*/
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="500" height="500">
+    <span>您的浏览器不支持Canvas</span>
+</canvas>
+
+</body>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var canvas = document.querySelector("#canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            //translate移动canvas原点位置,canvas中的变化时累加的
+            ctx.translate(50, 50);
+            //旋转，移动后旋转
+            ctx.rotate(30 * Math.PI / 180);
+            //缩放,放大是放大CSS像素的面积，区域内CSS像素个数变少
+            //缩小：缩小CSS像素的面积，区域内CSS像素个数变多
+            ctx.scale(2, 2);
+            ctx.beginPath();
+            ctx.fillRect(0, 0, 100, 100);
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas-Circle</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #4c4c4c;
+        }
+
+        #canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="300" height="300">
+    <span>您的浏览器不支持canvas</span>
+</canvas>
+
+</body>
+
+<!-- 使用canvas绘制圆形 -->
+<script type="text/javascript">
+    window.onload = function () {
+        var canvas = document.querySelector("#canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.save();
+            ctx.strokeStyle = "deeppink";
+            ctx.beginPath();
+            ctx.moveTo(100, 100);
+            //顺时针绘制圆形弧
+            ctx.arc(100, 100, 50, 0, 270 * Math.PI / 180);
+            ctx.stroke();
+
+            //绘制圆弧
+            ctx.beginPath();
+            ctx.moveTo(200, 200);
+            ctx.arcTo(100, 100, 50, 150, 100);
+            ctx.stroke();
+//            ctx.restore();
+
+            //绘制二次贝塞尔曲线
+            ctx.beginPath();
+            ctx.moveTo(200, 200);
+            ctx.quadraticCurveTo(100, 100, 50, 150);
+            ctx.stroke();
+//            ctx.restore();
+
+            //绘制三次贝塞尔曲线
+            ctx.beginPath();
+            ctx.moveTo(50, 50);
+            ctx.quadraticCurveTo(100, 100, 50, 150, 50, 50);
+            ctx.stroke();
+        }
+    }
+</script>
+</html>

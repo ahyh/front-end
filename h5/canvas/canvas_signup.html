@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>Canvas-Sign</title>
     <style type="text/css">
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
 
-        body{
+        body {
             background-color: #4c4c4c;
         }
 
-        #canvas{
+        #canvas {
             position: absolute;
             left: 0;
             right: 0;
-            top:0;
+            top: 0;
             bottom: 0;
             margin: auto;
             background-color: whitesmoke;
@@ -36,37 +36,37 @@
 <script type="text/javascript">
     window.onload = function () {
         var canvas = document.querySelector("#canvas");
-        if(canvas.getContext){
+        if (canvas.getContext) {
             var ctx = canvas.getContext("2d");
         }
 
         //鼠标点击下的事件
         canvas.onmousedown = function (ev) {
             ev = ev || window.event;
-            if(canvas.setCapture){
+            if (canvas.setCapture) {
                 canvas.setCapture();
             }
             ctx.save();
             //设置颜色
             ctx.strokeStyle = "deeppink";
             ctx.beginPath();
-            ctx.moveTo(ev.clientX - canvas.offsetLeft,ev.clientY - canvas.offsetTop);
+            ctx.moveTo(ev.clientX - canvas.offsetLeft, ev.clientY - canvas.offsetTop);
 
             //鼠标左键按下并移动鼠标事件
             document.onmousemove = function (ev) {
                 ev = ev || window.event;
-                ctx.lineTo(ev.clientX - canvas.offsetLeft,ev.clientY- canvas.offsetTop);
+                ctx.lineTo(ev.clientX - canvas.offsetLeft, ev.clientY - canvas.offsetTop);
                 ctx.stroke();
-            }
+            };
 
             document.onmouseup = function () {
                 document.onmousemove = document.onmouseup = null;
-                if(document.releaseCapture){
+                if (document.releaseCapture) {
                     document.releaseCapture();
                 }
-            }
-            return false;
+            };
             ctx.restore();
+            return false;
         }
     }
 </script>

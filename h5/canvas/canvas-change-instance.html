@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Instance</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #4c4c4c;
+        }
+
+        #canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: whitesmoke;
+            /*transform: translateX(100px);*/
+            /*transform: translateY(100px);*/
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="300" height="300">
+    <span>您的浏览器不支持canvas</span>
+</canvas>
+
+</body>
+
+<!-- canvas绘制矩形，旋转并缩放 -->
+<script type="text/javascript">
+    window.onload = function () {
+        var i = 0;
+        var scala = 0;
+        var scalaFlag = 0;
+        var canvas = document.querySelector("#canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+            ctx.save();
+            ctx.translate(150, 150);
+            ctx.beginPath();
+            ctx.fillRect(-50, -50, 100, 100);
+            ctx.restore();
+//            ctx.rotate(45 * Math.PI /180);
+            //一秒钟60次的定时器
+            setInterval(function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.save();
+                ctx.translate(150, 150);
+                i++;
+                ctx.rotate(i * Math.PI / 180);
+                if (scala == 100) {
+                    scalaFlag = -1;
+                } else if (scala == 0) {
+                    scalaFlag = 1;
+                }
+                scala += scalaFlag;
+                ctx.scale(scala / 50, scala / 50);
+                ctx.beginPath();
+                ctx.fillRect(-50, -50, 100, 100);
+                ctx.restore();
+            }, 1000 / 60);
+            ctx.restore()
+        }
+    }
+</script>
+</html>
