@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background: pink;
+        }
+
+        body {
+            background-color: #4c4c4c;
+        }
+
+        #canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="300" height="300">
+
+</canvas>
+
+</body>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var canvas = document.querySelector("#canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "blue";
+            ctx.font = "20px bold 宋体";
+            //center时，文字一半在x值左侧，一半在x值的右侧
+//            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+//            ctx.fillText("Hello World,Canvas", 0, 100);
+            var w = ctx.measureText("Hello World,Canvas").width;
+            //空心字体
+            ctx.strokeText("Hello World,Canvas", (canvas.width - w) / 2, (canvas.height - 20) / 2);
+        }
+    }
+</script>
+
+</html>

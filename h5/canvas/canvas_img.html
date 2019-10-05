@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas-Img</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background: pink;
+        }
+
+        body {
+            background-color: #4c4c4c;
+        }
+
+        #canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="300" height="300">
+    <span>您的浏览器不支持canvas</span>
+</canvas>
+
+</body>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var canvas = document.querySelector("#canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            var img = new Image();
+            img.src = "../../file/img/tg.png";
+            img.onload = function () {
+                draw();
+            }
+        }
+
+        function draw() {
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+        }
+    }
+</script>
+</html>
