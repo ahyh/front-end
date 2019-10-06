@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>Nav</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        img {
+            width: 100%;
+        }
+
+        .lunbotu {
+            margin-top: 30px;
+        }
+
+        .lunbotu, .lunbotu > .item {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .carousel-caption, .item {
+            bottom: 40%;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .carousel-caption {
+                bottom: 5%;
+            }
+
+            .lunbotu, .lunbotu .item {
+                height: 200px;
+            }
+        }
+
+        .yh-thumbnail img {
+            width: auto;
+        }
+
+        .container-threeCol {
+            margin-top: 50px;
+        }
+
+        .line {
+            margin: 50px auto;
+        }
+
+        .line > hr {
+            border: 2px solid deeppink;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- 导航条 -->
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">安徽省博物馆</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">综述 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">简述</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">特点 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="special-point">
+                        <li><a href="#hefei">合肥馆</a></li>
+                        <li><a href="#anqing">安庆馆</a></li>
+                        <li><a href="#liuan">六安馆</a></li>
+                        <li><a href="#fuyang">阜阳馆</a></li>
+                        <li><a href="#chuzhou">滁州馆</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;" data-toggle="modal" data-target="#myModal">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="carousel-example-generic" class="carousel slide lunbotu" data-ride="carousel" data-interval="2000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="../images/chrome-big.jpg" alt="hefei.jpg">
+            <div class="carousel-caption">
+                合肥
+            </div>
+        </div>
+        <div class="item">
+            <img src="../images/firefox-big.jpg" alt="anqing.jpg">
+            <div class="carousel-caption">
+                安庆
+            </div>
+        </div>
+        <div class="item">
+            <img src="../images/ie-big.jpg" alt="liuan.jpg">
+            <div class="carousel-caption">
+                六安
+            </div>
+        </div>
+        <div class="item">
+            <img src="../images/opera-big.jpg" alt="fuyang.jpg">
+            <div class="carousel-caption">
+                阜阳
+            </div>
+        </div>
+        <div class="item">
+            <img src="../images/safari-big.jpg" alt="chuzhou.jpg">
+            <div class="carousel-caption">
+                滁州
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- 三列布局 -->
+<div class="container container-threeCol">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 yh-thumbnail text-center">
+            <img src="../images/chrome-logo-small.jpg" alt="chrome">
+            <div class="caption">
+                <h3>Chrome</h3>
+                <p>Chrome google Inc.</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 yh-thumbnail text-center">
+            <img src="../images/firefox-logo-small.jpg" alt="firefox">
+            <div class="caption">
+                <h3>firefox</h3>
+                <p>火狐浏览器</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 yh-thumbnail text-center">
+            <img src="../images/safari-logo-small.jpg" alt="safari">
+            <div class="caption">
+                <h3>safari</h3>
+                <p>苹果iOS浏览器</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container line">
+    <hr/>
+</div>
+
+<!-- 标签页 -->
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist" id="biaoqianlist">
+        <li role="presentation" class="active"><a href="#hefei" aria-controls="home" role="tab" data-toggle="tab">合肥</a></li>
+        <li role="presentation"><a href="#anqing" aria-controls="profile" role="tab" data-toggle="tab">安庆</a></li>
+        <li role="presentation"><a href="#liuan" aria-controls="messages" role="tab" data-toggle="tab">六安</a></li>
+        <li role="presentation"><a href="#fuyang" aria-controls="settings" role="tab" data-toggle="tab">阜阳</a></li>
+        <li role="presentation"><a href="#chuzhou" aria-controls="settings" role="tab" data-toggle="tab">滁州</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="hefei">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>合肥-庐州</h3>
+                        合肥，简称庐或合，古称庐州、庐阳、合淝 ，是安徽省省会，长三角城市群副中心 ，综合性国家科学中心，“一带一路”和长江经济带战略双节点城市
+                        ，具有国际影响力的创新之都，国家重要的科研教育基地，现代制造业基地和综合交通枢纽 ，合肥都市圈中心城市 ，皖江城市带核心城市 ，G60科创走廊中心城市
+                    </div>
+                    <div class="col-md-5">
+                        <img src="../images/hefei.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="anqing">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>安庆-安徽之安</h3>
+                        安庆，安徽省地级市。位于安徽省西南部，长江下游北岸，皖河入江处，西接湖北，南邻江西，西北靠大别山主峰，东南倚黄山余脉。安庆下辖2个县级市（桐城市、潜山市），5个县（怀宁县、望江县、太湖县、岳西县、宿松县）和3个区（迎江区、大观区、宜秀区）。安庆总面积13589.99平方公里，其中安庆市区面积821平方公里。截至2018年末，安庆常住人口469.1万人，比上年增加4.8万人，同比增长0.67%。
+                    </div>
+                    <div class="col-md-5">
+                        <img src="../images/anqing.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="liuan">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>六安-皖西之城</h3>
+                        六安，安徽省地级市。位于安徽省西部，简称英，别称“皋城”，处于长江与淮河之间，大别山北麓，长江三角洲经济区西翼，地理意义上的“皖西”特指六安。六安地处江淮，东衔吴越，西领荆楚，北接中原；地势西南高峻，东北低平，呈梯形分布；属于北亚热带向暖温带转换的过渡带，季风显著，四季分明。2017年，全市总面积15451平方公里，2017年户籍人口588.2万；下辖3区4县。
+                    </div>
+                    <div class="col-md-5">
+                        <img src="../images/liuan.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="fuyang">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>阜阳-皖北枢纽</h3>
+                        阜阳，安徽省地级市，简称阜，古称汝阴、顺昌、颍州，位于安徽省西北部，华北平原南端。西北部与河南省周口市，西与河南省新蔡县相邻，西南部与河南省信阳市相接，北部、东北部与亳州市毗邻，东部与淮南市相连，南部与六安市隔淮河相望，下辖3区4县1市。全市总面积10118.17
+                        KM² )，截至2018年末全市户籍人口1070.8万人，比上年末增加0.7万人。据抽样调查，截至2018年末全市常住人口820.7万人，比上年末增加11.4万人
+                    </div>
+                    <div class="col-md-5">
+                        <img src="../images/fuyang.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="chuzhou">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>滁州-琅琊山</h3>
+                        滁州，简称滁，古称涂中、清流、新昌。是安徽省省辖市，是南京都市圈、合肥都市圈核心圈层城市、长三角城市群成员城市，南京市江北门户，国家级皖江示范区北翼城市，皖东区域中心城市，江淮地区重要的枢纽城市。
+                    </div>
+                    <div class="col-md-5">
+                        <img src="../images/chuzhou.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    &copy;百度百科
+</div>
+
+<!-- 模态框 -->
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="../js/jquery.min.js" type="text/javascript"></script>
+<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $("#special-point >li >a").click(function (ev) {
+        ev.preventDefault();
+        var href = $(this).attr("href");
+        $("#biaoqianlist > li > a[href=" + href + "]").tab("show");
+        $(document).scrollTop($("#biaoqianlist").offset().top)
+    })
+</script>
+</html>
