@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloJS</title>
+    <script type="text/javascript">
+        /**
+         * JavaScript的6种数据类型
+         * 1-String：字符串
+         * 2-Number：数字
+         * 3-Boolean：布尔值
+         * 4-Null：空值
+         * 5-Undefined：未定义数据类型
+         * 6-Object：对象
+         *
+         * 1-5为基本数据类型，Object为引用数据类型
+         */
+        var a = 123;
+        console.log("typeof a:" + typeof a);
+
+        var str = "Hello";
+        console.log("typeof str:" + typeof str);
+
+        var na = 123;
+        var nb = "123";
+        //返回true
+        console.log("na == nb:" + (na == nb));
+        //返回false
+        console.log("na===nb:" + (na === nb));
+
+        /**
+         * 类型转换
+         */
+        //Number转换为String
+        console.log(na.toString());
+        console.log(String(na));
+
+        //String转换为Number,使用Number函数
+        //如果无法转换，使用Number函数返回NaN
+        console.log("Number of nb:" + Number(nb));
+
+        //boolean值，true转换为1，false转换为0
+        console.log("Number of true:" + Number(true));
+        console.log("Number of false:" + Number(false));
+
+        //parseInt():将字符串转换为整数,将整数部分解析出来转换为整数
+        console.log(parseInt("123.45"));
+
+        //parseFloat():将字符串的小数部分解析出来
+        console.log(parseFloat("123.45.2"));
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>
