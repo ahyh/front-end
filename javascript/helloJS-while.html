@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloJS-While</title>
+    <script type="text/javascript">
+        var money = 1000;
+        var i = 0;
+        do {
+            money *= 1.05;
+            i++;
+        } while (money <= 5000);
+        console.log(i);
+
+        //求0-100之间7的倍数的个数及其之和
+        var num = 0, sum = 0;
+        for (var j = 0; j < 100; j++) {
+            if (j % 7 == 0) {
+                num++;
+                sum += j;
+            }
+        }
+        console.log("0-100之间7的倍数个数：" + num);
+        console.log("0-100之间7的倍数之和：" + sum);
+
+        //输出0-1000之间的水仙花数
+        for (k = 100; k < 999; k++) {
+            var ge = k % 10;
+            var shi = parseInt((k / 10) % 10);
+            var bai = parseInt(k / 100);
+            if (Math.pow(bai, 3) + Math.pow(shi, 3) + Math.pow(ge, 3) == k) {
+                console.log(k);
+            }
+        }
+
+        //输出0-100之间所有质数
+
+        for (var m = 1; m <= 100; m++) {
+            for (var n = 2; n < m - 1; n++) {
+                var flag = true;
+                if (m % n == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                alert(m);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

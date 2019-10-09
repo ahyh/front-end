@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns: xmlns: xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello-Vue</title>
+</head>
+<body>
+
+<div id ="app">
+    <h1>1.双大括号表达式</h1>
+    <p>Msg:{{msg}}</p>
+    <p>Msg:{{msg.toUpperCase()}}</p>
+    <p v-text="msg"></p>
+    <p v-html="msg"></p>
+
+    <h1>2.强制数据绑定</h1>
+    <img v-bind:src="imgUrl">
+    <img :src="imgUrl">
+
+    <h1>3.绑定事件监听</h1>
+    <button v-on:click="test">BUTTON</button>
+    <button @click="test('ppp')">BUTTON</button>
+</div>
+
+</body>
+
+<script type="text/javascript" src="../vue/js/vue.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '<a href="http://www.baidu.com">Welcome to Vue</a>',
+            imgUrl:'../file/img/a.png'
+        },
+        methods:{
+            test(str){
+                alert("Test Vue on:"+str);
+            }
+        }
+    });
+</script>
+</html>
