@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS-Object</title>
+    <script type="text/javascript">
+        var obj = new Object();
+        obj.name = "ppp";
+        obj.age = 23;
+        obj["school"] = "ahut";
+        alert(typeof obj);
+        alert("Name:" + obj.name);
+        alert("Name:" + obj.age);
+        alert("school:" + obj.school);
+
+        //删除对象的属性
+        delete obj.school;
+        alert("school:" + obj.school);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

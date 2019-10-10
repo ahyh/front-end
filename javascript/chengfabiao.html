@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChengFaBiao</title>
+    <script type="text/javascript">
+        var i = 1, j = 1;
+        for (; i <= 9; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write("<span>" + j + " * " + i + " = " + i * j + "</span>");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<hr>");
+        document.write("<table border='2px'>");
+
+        for(var i = 1;i<=9;i++){
+            document.write("<tr>");
+            for(var j = 1;j<=i;j++){
+                document.write("<td>");
+                document.write("<span>" + j + " * " + i + " = " + i * j + "</span>");
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>
