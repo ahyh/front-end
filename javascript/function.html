@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+</head>
+<body>
+
+<div>
+    <button id="btn">点我</button>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var add = function (a, b) {
+        alert("a+b=" + (a + b));
+    };
+
+    var btn = document.querySelector("#btn");
+    btn.onclick = function () {
+        add(3, 4);
+    }
+</script>
