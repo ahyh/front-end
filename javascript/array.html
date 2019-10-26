@@ -55,6 +55,56 @@
         for (var j = 0; j < array.length; j++) {
             console.log("array[" + j + "]" + array[j]);
         }
+
+        /**
+         * 数组中有几个元素就执行几次
+         * 浏览器在回调函数中传入3个参数，
+         *      第一个：当前正在遍历的元素
+         *      第二个：当前正在遍历的元素的索引
+         *      第三个：当前正在遍历的数组
+         */
+        array.forEach(function (ele, index, array) {
+            console.log("ele:" + ele);
+            console.log("index:" + index);
+            console.log("array:" + array);
+        });
+
+        /**
+         * slice:截取数组，包含开始，不包含结束，不会改变原数组，只传入一个参数则截取到最后，第二个元素可以传入负数，如果是负数从后往前计算
+         *
+         * splice：删除元素并添加新元素，会影响原数组，第一个参数：删除元素开始位置，第二个参数：删除元素个数，第三个参数：替换元素
+         */
+        var subArr = array.slice(3, 7);
+        console.log("subArr:" + subArr);
+        var spliceArr = array.splice(2, 5, 8, 9);
+        console.log("spliceArr:" + spliceArr);
+        console.log("array:" + array); //删除元素后的数组
+
+        /**
+         * 数组去重练习
+         */
+        var brr = [1, 1, 2, 2, 5, 3, 4, 5, 4, 2, 1];
+        var crr = [];
+        var drr = [];
+        for (var k = 0; k < brr.length; k++) {
+            crr[brr[k]] = 0;
+        }
+        crr.forEach(function (ele, index) {
+            drr.push(index);
+        });
+        console.log("drr:" + drr);
+
+        /**
+         * 数组方法：
+         * concat():连接多个数组并返回一个新的数组，该方法不会对原数组产生影响
+         * join():返回字符串,使用入参的字符串连接数组的元素
+         * reverse():反转数组，改变原数组
+         * sort():排序,默认按照Unicode编码排序,可以传入排序规则函数
+         */
+        console.log("array join:" + array.join(";"));
+        console.log("array sort:" + array.sort(function (a, b) {
+                return a - b;
+            }));
     </script>
 </head>
 <body>

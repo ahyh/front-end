@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CallApply</title>
+    <script type="text/javascript">
+        /**
+         * call()和apply()都是函数的方法，需要通过函数对象来调用
+         * 调用call和apply可以将对象指定为第一个参数，此时这个对象将会成为函数执行时的this
+         * call方法可以将实参在对象之后依次传递
+         * apply需要将实参封装到一个数组中统一传递
+         *
+         *
+         */
+        function fun() {
+            console.log("arguments:"+arguments[0]);
+//            alert(this);
+//            alert("Hello JS")
+        }
+
+        var arr = [1, 2, 3];
+        fun.apply(arr);
+        /**
+         * 函数定义时可以没有形参，但是可以传入实参
+         */
+        fun("hello","javaScript");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+    <script type="text/javascript">
+        /**
+         * 字符串的方法
+         */
+        var str = "Hello JavaScript";
+        console.log("str[4]" + str[4]);
+        console.log("length of str:" + str.length);
+        console.log("charAt 3:" + str.charAt(3)); //返回字符
+        console.log("charCodeAt 3:" + str.charCodeAt(3));//返回字符编码
+        console.log("fromCharCodeAt l:" + String.fromCharCode(97));//根据Unicode编码获取字符
+
+        var result = str.concat("你好"); //拼接字符串
+        console.log("result:" + result);
+
+        var index = str.indexOf("ava");
+        console.log("index of ava：" + index); //返回第一次出现的索引，如果没有找到相关的元素返回-1
+
+        var index1 = str.indexOf("a", 5);//第二个参数表示开始查找的位置
+        console.log("index of a from 5:" + index1);
+
+        var lastIndex = str.lastIndexOf("l", 2);//第二个参数表示开始查找的位置，从后往前开始查找
+        console.log("lastIndex of l:" + lastIndex);
+
+        var subStr = str.slice(3, 8);
+        console.log("subStr:" + subStr);
+
+        var split = str.split(" "); //数组拆分
+        console.log("split :" + split + "isArray?"+Array.isArray(split));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
