@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+    <script type="text/javascript">
+        /**
+         * 数组对象
+         */
+        var arr = new Array();
+        //返回Object
+        console.log(typeof arr);
+        //向数组添加元素
+        arr[0] = 10;
+        arr[1] = 12;
+        console.log(arr);
+        //获取数组长度,length获取的最大索引+1
+        console.log("length of arr:" + arr.length);
+
+        //使用[]创建数组
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var sum = 0;
+        for (var i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        console.log(sum);
+
+        //数组的方法
+        /**
+         * push:向数组的尾部添加元素,返回最后一个元素
+         * pop:从数组的尾部取出元素并删除
+         */
+        var push = array.push(11, 12);
+        console.log(array);
+        console.log("push:" + push);
+        var pop = array.pop();
+        console.log(array);
+        console.log(pop)
+
+        /**
+         * unshift:向数组的头部添加元素，并返回数组的第0个元素
+         * shift:从数组的头部删除一个元素，并返回该元素
+         */
+        var unshift = array.unshift(13, 14);
+        console.log(array);
+        console.log(unshift);
+
+        var shift = array.shift();
+        console.log(array);
+        console.log(shift);
+
+        /**
+         * 数组的遍历
+         */
+        for (var j = 0; j < array.length; j++) {
+            console.log("array[" + j + "]" + array[j]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

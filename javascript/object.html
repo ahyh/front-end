@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+    <script type="text/javascript">
+        /**
+         * 使用工厂方法创建对象
+         */
+        function fun() {
+            console.log(this.name);
+        }
+
+        function createPerson(name, age, gender, fun) {
+            /**
+             * 创建对象并赋值
+             * @type {Object}
+             */
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.gender = gender;
+            obj.method = fun;
+            return obj;
+        }
+
+        /**
+         * 使用构造方法创建的对象都是Object类型
+         */
+        var p = createPerson("huanyan", 27, "男", fun);
+        console.log(p.name);
+        console.log(p);
+
+
+        /**
+         * 构造函数,首字母一般大写
+         * 使用构造函数一般使用new关键字
+         * 构造函数执行流程：
+         *      1-立刻创建一个新的对象
+         *      2-将新建的对象设置为函数中的this
+         *      3-逐行执行函数中的内容
+         *      4-将新建的对象作为返回值返回
+         * 使用同一个构造函数创建的对象称为同一类对象，也称构造函数为类
+         */
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        var person = new Person("huanhuan",29,"女");
+        console.log(person);
+        console.log(person instanceof Person)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
