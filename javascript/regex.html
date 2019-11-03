@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regex</title>
+    <script type="text/javascript">
+        var r = new RegExp("a", "i");//正则表达式，判断字符串是否含有a,忽略大小写
+        var result = r.test("abc");
+        console.log("result=" + result);
+
+        var aORb = /a|b/i; //a|b [ab]
+        console.log(aORb.test("bc"));
+
+        var zimu = /[a-z]/ig;
+        console.log(zimu.test("nihao"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
