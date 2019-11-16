@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns: xmlns: xmlns: xmlns:>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Hello-Vue</title>
 </head>
 <body>
 
-<div id ="app">
+<div id="app">
     <h1>1.双大括号表达式</h1>
-    <p>Msg:{{msg}}</p>
-    <p>Msg:{{msg.toUpperCase()}}</p>
-    <p v-text="msg"></p>
-    <p v-html="msg"></p>
+    <p>Msg:{{textMsg}}</p>
+    <p>Msg:{{textMsg.toUpperCase()}}</p>
+    <p v-text="textMsg"></p>
+    <p v-html="htmlMsg"></p>
 
     <h1>2.强制数据绑定</h1>
     <img v-bind:src="imgUrl">
@@ -29,12 +29,13 @@
     const vm = new Vue({
         el: '#app',
         data: {
-            msg: '<a href="http://www.baidu.com">Welcome to Vue</a>',
-            imgUrl:'../file/img/a.png'
+            textMsg: 'I love you',
+            htmlMsg: '<a href="http://www.baidu.com">Welcome to Vue</a>',
+            imgUrl: 'https://vuejs.org/images/logo.png'
         },
-        methods:{
+        methods: {
             test(str){
-                alert("Test Vue on:"+str);
+                alert("Test Vue on:" + str);
             }
         }
     });

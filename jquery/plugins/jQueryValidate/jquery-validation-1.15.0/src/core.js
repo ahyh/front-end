@@ -776,8 +776,8 @@ $.extend( $.validator, {
 		// specified in the element's HTML5 data attribute
 		// return the generic message if present and no method specific message is present
 		customDataMessage: function( element, method ) {
-			return $( element ).data( "msg" + method.charAt( 0 ).toUpperCase() +
-				method.substring( 1 ).toLowerCase() ) || $( element ).data( "msg" );
+			return $( element ).data( "htmlMsg" + method.charAt( 0 ).toUpperCase() +
+				method.substring( 1 ).toLowerCase() ) || $( element ).data( "htmlMsg" );
 		},
 
 		// Return the custom message for the given element name and validation method
