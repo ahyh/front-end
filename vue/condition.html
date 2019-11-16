@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Condition</title>
+</head>
+<body>
+
+<div id="demo">
+    <!--
+     v-if v-else是通过移除标签实现的
+     v-show是通过display:none实现影藏的
+    -->
+    <p v-if="ok">OK</p>
+    <p v-else>Failed</p>
+
+    <p v-show="ok">Show</p>
+    <p v-show="!ok">Not Show</p>
+    <button @click="update">切换</button>
+</div>
+
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:"#demo",
+        data:{
+            ok:false
+        },
+        methods:{
+            update(){
+                this.ok=!this.ok;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
