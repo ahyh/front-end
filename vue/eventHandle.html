@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventHandle</title>
+
+</head>
+<body>
+<div id="demo">
+    <h1>1.绑定监听</h1>
+    <button @click="test1">test1</button>
+    <button @click="test2('huanyan')">test2</button>
+    <button @click="test3($event)">test3</button>
+
+    <h1>2.事件修饰</h1>
+    <!-- 事件冒泡 -->
+    <div style="width:200px;height: 200px;background-color: #00aa00" @click="test4">
+        <!-- @click.stop可以阻止事件冒泡 -->
+        <div style="width:100px;height: 100px;background-color: yellow" @click.stop="test5">
+        </div>
+    </div>
+
+    <!-- 阻止事件的默认行为 -->
+    <a href="https://www.baidu.com" @click.prevent="test6">去百度</a>
+
+    <h1>3.按键修饰符</h1>
+    <!-- 监听回车键的keyup事件 -->
+    <input type="text" @keyup.13 ="test7">
+    <input type="text" @keyup.enter ="test7">
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: "#demo",
+        data: {
+            test1(){
+                alert("test1");
+            },
+            test2(str){
+                alert(str);
+            },
+            test3(event){
+                //传入事件
+                alert(event.target.innerHTML)
+            },
+            test4(){
+                alert("out");
+            },
+            test5(){
+                alert("in");
+            },
+            test6(){
+                alert("阻止去百度")
+            },
+            test7(event){
+                if (event.keyCode === 13) {
+                    alert(event.target.value);
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
