@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Filter</title>
+</head>
+<body>
+
+<div id="demo">
+    <h1>显示格式化的日期</h1>
+    <p>{{date}}</p>
+    <p>完整版：{{date | dateFilter}}</p>
+    <p>年月日：{{date | dateFilter('YYYY-MM-DD')}}</p>
+    <p>时分秒：{{date | dateFilter('HH:mm:ss')}}</p>
+</div>
+
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript">
+    //Vue过滤器
+    Vue.filter('dateFilter', function (value, format) {
+        return moment().format(format || 'YYYY-MM-DD HH:mm:ss');
+    });
+    new Vue({
+        el: "#demo",
+        data: {
+            date: new Date()
+        }
+    })
+</script>
+</body>
+</html>
